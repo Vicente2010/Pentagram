@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_layout_id"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    tools:context=".MainActivity"
+    android:background="@color/colorFondo">
+
+
+
+<android.support.constraint.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/sfiMiIndicador"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/lista_height">
+
+        <ListView
+            android:id="@+id/lstMiLista"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/lista_height">
+
+        </ListView>
+
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+    <TextView
+        android:id="@+id/tvTitulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/texto_titulo"
+        app:layout_constraintTop_toBottomOf="@+id/sfiMiIndicador"
+        app:layout_constraintHorizontal_bias="0.123"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+         />
+
+    <Button
+        android:id="@+id/btnMiBoton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/texto_boton_click"
+        android:theme="@style/MyRaisedButton"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitulo" />
+
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fabMiFAB"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnMiBoton" />
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/miCardView"
+        android:layout_width="@dimen/card_medida"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/fabMiFAB"
+        card_view:cardCornerRadius="4dp"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imgImagen"
+                android:layout_width="wrap_content"
+                android:layout_height="130dp"
+                android:layout_alignParentTop="true"
+                android:contentDescription="@string/content_image"
+                android:scaleType="centerCrop"
+                android:src="@drawable/fondo_lollipop" />
+
+            <TextView
+                android:id="@+id/tvTituloTarjeta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/imgImagen"
+                android:text="@string/titulo_tarjeta"
+                android:textStyle="bold"
+                android:textSize="@dimen/card_titulo"/>
+
+            <TextView
+                android:id="@+id/tvDescripcionTarjeta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvTituloTarjeta"
+                android:text="@string/descripción_tarjeta" />
+
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+</android.support.constraint.ConstraintLayout>
+
+</android.support.design.widget.CoordinatorLayout>

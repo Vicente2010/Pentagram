@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="lista_height">100dp</dimen>
+    <dimen name="card_medida">200dp</dimen>
+    <dimen name="card_titulo">20sp</dimen>
+</resources>
